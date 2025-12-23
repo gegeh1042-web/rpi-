@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPI恋爱测试 - 发现你的恋爱特质</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- 背景图 -->
+    <div class="bg-image"></div>
+    
+    <!-- 页面容器 -->
+    <div class="container">
+        <!-- 首页 -->
+        <section id="home" class="page active">
+            <!-- 横幅 -->
+            <div class="banner">
+                <img src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/rc/pc/super_tool/f30eb1a82d4b43a2a86ee528563ec311~tplv-a9rns2rl98-image.image?rcl=20251129154805305CB4CE8B085A29342B&rk3s=8e244e95&rrcfp=f06b921b&x-expires=1766994629&x-signature=rcyoj6V5%2BBK6PBWffcwPOsBTyvI%3D" alt="RPI恋爱测试" class="banner-img">
+            </div>
+            
+            <!-- 介绍 -->
+            <div class="intro">
+                <h2>你准备好了解自己的恋爱特质了吗？</h2>
+                <p>这个测试将通过一系列<span class="highlight">幽默风趣</span>的问题，结合<span class="highlight">网络热梗</span>和<span class="highlight">神评论</span>，为你揭示恋爱中的另一面！</p>
+                <p class="warning">⚠️ 注意：测试结果仅供娱乐，如有雷同，纯属巧合！</p>
+            </div>
+            
+            <!-- 测试入口 -->
+            <div class="start-btn-container">
+                <button id="start-test" class="btn start-btn">
+                    <span>开始测试</span>
+                    <i class="fas fa-heart"></i>
+                </button>
+            </div>
+            
+            <!-- 搞笑宣传语 -->
+            <div class="funny-slogans">
+                <p>"测完这个，我终于知道为什么我单身了！"</p>
+                <p>"恋爱太难了，不如先测个试？"</p>
+                <p>"据说99%的情侣都不敢一起测这个..."</p>
+            </div>
+        </section>
+        
+        <!-- 测试页面 -->
+        <section id="quiz" class="page hidden">
+            <!-- 进度指示器 -->
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div id="progress-fill" class="progress-fill"></div>
+                </div>
+                <div id="progress-text" class="progress-text">1/20</div>
+            </div>
+            
+            <!-- 题目容器 -->
+            <div id="question-container" class="question-container">
+                <h3 id="question-text" class="question-text">加载中...</h3>
+                
+                <!-- 选项容器 -->
+                <div id="options-container" class="options-container">
+                    <!-- 选项将通过JS动态生成 -->
+                </div>
+            </div>
+            
+            <!-- 导航按钮 -->
+            <div class="nav-buttons">
+                <button id="prev-btn" class="btn nav-btn prev-btn hidden">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>上一题</span>
+                </button>
+                
+                <button id="next-btn" class="btn nav-btn next-btn">
+                    <span>下一题</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </section>
+        
+        <!-- 结果页面 -->
+        <section id="result" class="page hidden">
+            <!-- 结果标题 -->
+            <div class="result-title">
+                <h2>你的恋爱测试结果出炉啦！</h2>
+                <div class="confetti-container">
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                    <div class="confetti"></div>
+                </div>
+            </div>
+            
+            <!-- 结果内容 -->
+            <div id="result-content" class="result-content">
+                <!-- 结果将通过JS动态生成 -->
+                <div class="loading">
+                    <div class="spinner"></div>
+                    <p>正在分析你的恋爱特质...</p>
+                </div>
+            </div>
+            
+            <!-- 结果解读 -->
+            <div id="result-interpretation" class="result-interpretation hidden">
+                <h3>专业解读</h3>
+                <p id="interpretation-text">加载中...</p>
+            </div>
+            
+            <!-- 结果操作按钮 -->
+            <div class="result-buttons">
+                <button id="share-btn" class="btn result-btn share-btn">
+                    <i class="fas fa-share-alt"></i>
+                    <span>分享结果</span>
+                </button>
+                
+                <button id="restart-btn" class="btn result-btn restart-btn">
+                    <i class="fas fa-redo"></i>
+                    <span>重新测试</span>
+                </button>
+            </div>
+        </section>
+        
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2025 RPI恋爱测试 | 本网站仅供娱乐</p>
+                <p class="disclaimer">免责声明：测试结果仅供参考，不构成任何恋爱建议。如果因此测试导致分手，我们概不负责！</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-weixin"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-weibo"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-qq"></i></a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- 分享弹窗 -->
+    <div id="share-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>分享你的测试结果</h3>
+                <button id="close-modal" class="close-modal">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <p>你的测试结果：<span id="share-result-text" class="share-result-text">加载中...</span></p>
+                
+                <div class="share-options">
+                    <button class="share-option-btn">
+                        <i class="fab fa-weixin"></i>
+                        <span>微信</span>
+                    </button>
+                    
+                    <button class="share-option-btn">
+                        <i class="fab fa-weibo"></i>
+                        <span>微博</span>
+                    </button>
+                    
+                    <button class="share-option-btn">
+                        <i class="fab fa-qq"></i>
+                        <span>QQ</span>
+                    </button>
+                    
+                    <button id="copy-link-btn" class="share-option-btn">
+                        <i class="fas fa-link"></i>
+                        <span>复制链接</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 音效元素 -->
+    <audio id="click-sound" src="https://assets.mixkit.co/active_storage/sfx/2005/2005-preview.mp3" preload="auto"></audio>
+    <audio id="next-sound" src="https://assets.mixkit.co/active_storage/sfx/1345/1345-preview.mp3" preload="auto"></audio>
+    <audio id="result-sound" src="https://assets.mixkit.co/active_storage/sfx/1115/1115-preview.mp3" preload="auto"></audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>
